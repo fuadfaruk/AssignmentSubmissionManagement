@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AssignmentSubmissionManagement.Api/AssignmentSubmissionManagement.Api.csproj" Id="d89178fe-5fa1-4d1e-a091-b6b228583e8f" />
+    <Project Path="src/AssignmentSubmissionManagement.Core/AssignmentSubmissionManagement.Core.csproj" Id="34245ecf-f194-4028-b11d-abf9d851c8b8" />
+    <Project Path="src/AssignmentSubmissionManagement.Infrastructure/AssignmentSubmissionManagement.Infrastructure.csproj" Id="1007a199-0e87-4ce0-a683-18d147c301a4" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AssignmentSubmissionManagement.Tests/AssignmentSubmissionManagement.Tests.csproj" Id="cc5c9b80-1a51-43d3-b1fb-c6347fce14bc" />
+  </Folder>
+</Solution>
