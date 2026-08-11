@@ -1,4 +1,5 @@
 ﻿using AssignmentSubmissionManagement.Core.Entities;
+using AssignmentSubmissionManagement.Infrastructure.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 
@@ -8,7 +9,7 @@ namespace AssignmentSubmissionManagement.Infrastructure.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<User> MyProperty => Set<User>();
+        public DbSet<User> Users => Set<User>();
         public DbSet<Class> Classes => Set<Class>();
         public DbSet<ClassTeacher> ClassTeachers => Set<ClassTeacher>();
         public DbSet<ClassStudent> ClassStudents => Set<ClassStudent>();
@@ -18,7 +19,12 @@ namespace AssignmentSubmissionManagement.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Configure your entity mappings here
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassTeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new ClassStudentConfiguration());
+            modelBuilder.ApplyConfiguration(new AssignmentConfiguration());
+            modelBuilder.ApplyConfiguration(new SubmissionConfiguration());
         }
     }
 }
