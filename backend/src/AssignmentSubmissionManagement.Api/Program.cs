@@ -39,10 +39,13 @@ public partial class Program
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IClassRepository, ClassRepository>();
+        builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 
         builder.Services.AddScoped<IAuthService, AuthService>();
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<IClassService, ClassService>();
+        builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+
 
         builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
 
