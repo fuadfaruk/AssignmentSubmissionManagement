@@ -1,0 +1,11 @@
+# Docker ignore patterns
+.vs
+.git
+.gitignore
+.next
+node_modules
+bin
+obj
+out
+*.user
+*.log
