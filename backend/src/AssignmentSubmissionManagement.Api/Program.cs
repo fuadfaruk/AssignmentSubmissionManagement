@@ -48,6 +48,9 @@ public partial class Program
         builder.Services.AddScoped<IAssignmentService, AssignmentService>();
         builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
+        var uploadsRoot = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+        builder.Services.AddScoped<IFileStorageService>(_ => new FileStorageService(uploadsRoot));
+
 
 
         builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
